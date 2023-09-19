@@ -14,7 +14,7 @@ class Vector {
 
     int length; // The number of entries in the vector
 
-    double entries[];
+    double * entries;
 
 public:
 
