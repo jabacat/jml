@@ -1,6 +1,7 @@
 #include <jml/math/vector.hpp>
 
 #include <cstring>
+#include <iostream>
 
 namespace jml {
 
@@ -31,6 +32,27 @@ void Vector::add(Vector& v) {
 
 int Vector::get_size() {
     return this->length;
+}
+
+double Vector::get_entry(int pos) {
+    if (pos < 0 || pos >= this->length) {
+        std::cout << "Position " << pos << " out of bounds." << std::endl;
+    }
+    return this->entries[pos];
+}
+
+void Vector::set_entry(int pos, double val) {
+    if (pos < 0 || pos >= this->length) {
+        std::cout << "Position " << pos << " out of bounds." << std::endl;
+    }
+    this->entries[pos] = val;
+}
+
+void Vector::add_entry(int pos, double val) {
+    if (pos < 0 || pos >= this->length) {
+        std::cout << "Position " << pos << " out of bounds." << std::endl;
+    }
+    this->entries[pos] += val;
 }
 
 }

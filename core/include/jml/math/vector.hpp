@@ -29,6 +29,10 @@ public:
 
     int get_size();
 
+    double get_entry(int pos);
+    void set_entry(int pos, double val);
+    void add_entry(int pos, double val); // Adds val to the current value in pos.
+
 };
 
 }
