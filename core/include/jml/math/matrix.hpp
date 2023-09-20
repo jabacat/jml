@@ -20,10 +20,13 @@ int n; // Number of columns
 
 double * entries;
 
+// This gets the array position for a particular row and column combination.
+int get_position(int i, int j);
+
 public:
      Matrix(int m, int n);
     ~Matrix();
-    int set_entry(int i, int j, double value);
+    void set_entry(int i, int j, double value);
     std::unique_ptr<Vector> multiply(Vector& in);
 
 };
