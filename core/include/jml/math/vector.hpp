@@ -27,6 +27,8 @@ public:
     // This adds every entry in v to this vector.
     void add(Vector& v);
 
+    int get_size();
+
 };
 
 }

@@ -29,4 +29,8 @@ void Vector::add(Vector& v) {
     }
 }
 
+int Vector::get_size() {
+    return this->length;
+}
+
 }
