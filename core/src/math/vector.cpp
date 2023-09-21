@@ -8,7 +8,7 @@ namespace jml {
 Vector::Vector(int length) {
 
     this->entries = new double(length);
-    memset(this->entries, 0, length);
+    memset(this->entries, 0, length * sizeof(double));
 
     this->length = length;
 
