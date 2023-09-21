@@ -25,6 +25,10 @@ void Vector::apply(std::function<double (double)> fn) {
 }
 
 void Vector::add(Vector& v) {
+    if (this->length != v.length) {
+        std::cout << "Tried to add a vector of length " << v.length <<
+        "to a vector of length " << this->length << "." << std::endl;
+    }
     for (int i = 0; i < this->length; ++i) {
         this->entries[i] += v.entries[i];
     }
