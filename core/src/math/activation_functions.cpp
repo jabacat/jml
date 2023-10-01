@@ -26,4 +26,13 @@ double FastSigmoid::df_precomp() {
     return 5.0 * (this->precomputed + this->x) / this->precomputed;
 }
 
+Sigmoid::Sigmoid() {}
+
+double Sigmoid::f(double x) { return 1.0 / (1.0 + std::exp(-x)); }
+
+double Sigmoid::df(double x) {
+    double s = this->f(x);
+    return s * (1 - s);
+}
+
 } // namespace jml

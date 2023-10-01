@@ -39,4 +39,12 @@ class FastSigmoid : private ActivationFunction {
     double precomputed;
 };
 
+class Sigmoid : private ActivationFunction {
+  public:
+    Sigmoid();
+
+    double f(double x);
+    double df(double x);
+};
+
 } // namespace jml
