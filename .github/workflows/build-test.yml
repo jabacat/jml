@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Dependencies
-        run: choco install meson
+        run: python -m pip install meson
 
       - name: Setup build with Meson
         run: meson setup build
