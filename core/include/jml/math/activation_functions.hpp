@@ -12,12 +12,8 @@ class ActivationFunction {
     virtual double f(double x) = 0;
     virtual double df(double x) = 0;
 
-    virtual double f_precomp(double x) = 0;
-    virtual double df_precomp(double x) = 0;
-
-  private:
-    double x;
-    double precomputed;
+    virtual double f_precomp() = 0;
+    virtual double df_precomp() = 0;
 };
 
 class FastSigmoid : private ActivationFunction {
@@ -29,11 +25,14 @@ class FastSigmoid : private ActivationFunction {
     // Otherwise, just use f and df and initialize with FastSigmoid();
 
   public:
+    FastSigmoid();
+    FastSigmoid(double x);
+
     double f(double x);
     double df(double x);
 
-    double f_precomp(double x);
-    double df_precomp(double x);
+    double f_precomp();
+    double df_precomp();
 
   private:
     double x;
