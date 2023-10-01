@@ -2,7 +2,7 @@
 JABACAT-created machine learning library from scratch.
 
 ## Build
-> **INFO**
+> [!IMPORTANT]
 > This project uses [The Meson Build system](https://mesonbuild.com/index.html). Follow instructions posted on the website to [install meson](https://mesonbuild.com/SimpleStart.html). On Windows, there is a winget package available.
 To build, setup the build directory. Any configuration steps should be done now (specifying compiler or linker, etc.).
 ```
@@ -18,7 +18,9 @@ meson install -C build  # again, replace `build`
 ```
 
 ## Test
-**TODO**: Add relevant information once testing framework is setup
+> [!WARNING]
+> Add relevant information once testing framework is setup
+
 Run `meson test` to test the project.
 ```bash
 meson test -C build # replace `build`
