@@ -5,6 +5,8 @@
 
 namespace jml {
 
+// FastSigmoid
+//
 FastSigmoid::FastSigmoid() {}
 FastSigmoid::FastSigmoid(double x) { this->precomputed = (1 + std::fabs(x)); }
 
@@ -26,6 +28,8 @@ double FastSigmoid::df_precomp() {
     return 5.0 * (this->precomputed + this->x) / this->precomputed;
 }
 
+// Sigmoid
+//
 Sigmoid::Sigmoid() {}
 
 double Sigmoid::f(double x) { return 1.0 / (1.0 + std::exp(-x)); }
@@ -35,10 +39,21 @@ double Sigmoid::df(double x) {
     return s * (1 - s);
 }
 
+// ReLU
+//
 ReLU::ReLU() {}
 
 double ReLU::f(double x) { return std::fmax(0, x); }
 
 double ReLU::df(double x) { return x > 0; }
+
+// LeakyReLU
+//
+LeakyReLU::LeakyReLU() { this->leak = 0.01; }
+LeakyReLU::LeakyReLU(double l) { this->leak = l; }
+
+double LeakyReLU::f(double x) { return std::fmax(this->leak, x); }
+
+double LeakyReLU::df(double x) { return x > 0; }
 
 } // namespace jml
