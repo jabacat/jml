@@ -54,6 +54,6 @@ LeakyReLU::LeakyReLU(double l) { this->leak = l; }
 
 double LeakyReLU::f(double x) { return std::fmax(this->leak, x); }
 
-double LeakyReLU::df(double x) { return x > 0; }
+double LeakyReLU::df(double x) { return (x > 0 ? 1 : this->leak * x); }
 
 } // namespace jml
