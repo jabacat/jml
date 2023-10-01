@@ -5,7 +5,7 @@
 
 namespace jml {
 
-FastSigmoid::FastSigmoid();
+FastSigmoid::FastSigmoid() {}
 FastSigmoid::FastSigmoid(double x) { this->precomputed = (1 + std::fabs(x)); }
 
 // 0.5 * ((x / 1 + abs(x)) + 1)
@@ -17,7 +17,7 @@ double FastSigmoid::f_precomp() { return 0.5 * this->x / this->precomputed; }
 
 // 0.5 * ((1 + abs(x) + x) / (1 + abs(x)))
 //
-double FastSigmoid::df() {
+double FastSigmoid::df(double x) {
     return 5.0 * ((1 + std::fabs(x)) + x) / (1 + std::fabs(x));
 }
 // g(x) = 1 + abs(x)
