@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Dependencies
-        run: winget install --id mesonbuild.meson
+        run: choco install meson
 
       - name: Setup build with Meson
         run: meson setup build
