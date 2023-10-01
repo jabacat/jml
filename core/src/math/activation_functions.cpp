@@ -52,7 +52,7 @@ double ReLU::df(double x) { return x > 0; }
 LeakyReLU::LeakyReLU() { this->leak = 0.01; }
 LeakyReLU::LeakyReLU(double l) { this->leak = l; }
 
-double LeakyReLU::f(double x) { return std::fmax(this->leak, x); }
+double LeakyReLU::f(double x) { return std::fmax(this->leak * x, x); }
 
 double LeakyReLU::df(double x) { return (x > 0 ? 1 : this->leak * x); }
 
