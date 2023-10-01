@@ -1,6 +1,6 @@
 #include "jml/math/activation_functions.hpp"
-#include <cmath>
 
+#include <cmath>
 #include <iostream>
 
 namespace jml {
@@ -34,5 +34,11 @@ double Sigmoid::df(double x) {
     double s = this->f(x);
     return s * (1 - s);
 }
+
+ReLU::ReLU() {}
+
+double ReLU::f(double x) { return std::fmax(0, x); }
+
+double ReLU::df(double x) { return x > 0; }
 
 } // namespace jml

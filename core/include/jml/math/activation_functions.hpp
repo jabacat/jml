@@ -47,4 +47,12 @@ class Sigmoid : private ActivationFunction {
     double df(double x);
 };
 
+class ReLU : private ActivationFunction {
+  public:
+    ReLU();
+
+    double f(double x);
+    double df(double x);
+};
+
 } // namespace jml
