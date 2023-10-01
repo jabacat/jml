@@ -20,7 +20,14 @@ class ActivationFunction {
     double precomputed;
 };
 
-class FastSigmoid {
+class FastSigmoid : private ActivationFunction {
+    // If you know you are going to call f at least once then df at least once
+    // afterwards (In that order!), then you can use f_precomp and df_precomp
+    // f_precomp will compute common values that are shared in df_precomp
+    // Make sure to use FastSigmoid(double x); to initialize.
+    //
+    // Otherwise, just use f and df and initialize with FastSigmoid();
+
   public:
     double f(double x);
     double df(double x);
