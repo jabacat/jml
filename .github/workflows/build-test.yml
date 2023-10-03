@@ -46,17 +46,9 @@ jobs:
       - name: Test with Meson
         run: meson test -C build
 
-  windows:
-    strategy:
-      matrix:
-        shell: [bash, pwsh]
-
-    name: Build and Test on Windows (${{ matrix.shell }})
+  windows-random:
+    name: Build and Test on Windows (Ninja and random compiler)
     runs-on: windows-latest
-
-    defaults:
-      run:
-        shell: ${{ matrix.shell }}
 
     steps:
       - uses: actions/checkout@v2
@@ -73,3 +65,21 @@ jobs:
       - name: Test with Meson
         run: meson test -C build
 
+  windows-vs:
+    name: Build and Test on Windows (Visual Studio)
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Dependencies
+        run: python -m pip install meson~=1.2.2 ninja~=1.11.1
+
+      - name: Setup build with Meson
+        run: meson setup -Dvsenv=true build
+
+      - name: Build with Meson
+        run: meson compile -C build
+
+      - name: Test with Meson
+        run: meson test -C build
