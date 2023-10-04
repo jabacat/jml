@@ -62,29 +62,6 @@ jobs:
       - name: Test with Meson
         run: meson test -C build
 
-  windows-mingw:
-    name: Build and Test on Windows (MinGW)
-    runs-on: windows-latest
-
-    defaults:
-      run:
-        shell: bash
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Dependencies
-        run: python -m pip install meson~=1.2.2 ninja~=1.11.1
-
-      - name: Setup build with Meson
-        run: meson setup build
-
-      - name: Build with Meson
-        run: meson compile -C build
-
-      - name: Test with Meson
-        run: meson test -C build
-
   windows-vs:
     name: Build and Test on Windows (Visual Studio)
     runs-on: windows-latest
