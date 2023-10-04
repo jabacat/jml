@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <memory>
 #include <vector>
 
 #include <jml/math/matrix.hpp>
@@ -39,6 +40,7 @@ friend class Model;
 private:
     Matrix matrix;
     Vector bias_vector;
+    std::shared_ptr<ActivationFunction> act;
 
 };
 
