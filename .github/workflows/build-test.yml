@@ -17,6 +17,14 @@ jobs:
 
       - name: Setup Dependencies
         run: python3 -m pip install meson~=1.2.2 ninja~=1.11.1
+      
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          key: linux-${{ hashFiles('subprojects/*.wrap') }}
+          path: |
+            subprojects
+            build/subprojects
 
       - name: Setup build with Meson
         run: meson setup build
@@ -37,24 +45,13 @@ jobs:
       - name: Setup Dependencies
         run: python3 -m pip install meson~=1.2.2 ninja~=1.11.1
 
-      - name: Setup build with Meson
-        run: meson setup build
-
-      - name: Build with Meson
-        run: meson compile -C build
-
-      - name: Test with Meson
-        run: meson test -C build
-
-  windows-random:
-    name: Build and Test on Windows (Ninja and random compiler)
-    runs-on: windows-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Dependencies
-        run: python -m pip install meson~=1.2.2 ninja~=1.11.1
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          key: macos-${{ hashFiles('subprojects/*.wrap') }}
+          path: |
+            subprojects
+            build/subprojects
 
       - name: Setup build with Meson
         run: meson setup build
@@ -74,6 +71,14 @@ jobs:
 
       - name: Setup Dependencies
         run: python -m pip install meson~=1.2.2 ninja~=1.11.1
+
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          key: windows-${{ hashFiles('subprojects/*.wrap') }}
+          path: |
+            subprojects
+            build/subprojects
 
       - name: Setup build with Meson
         run: meson setup -Dvsenv=true build
