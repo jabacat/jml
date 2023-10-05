@@ -29,10 +29,10 @@ void Matrix::set_entry(int i, int j, double value) {
 
 }
 
-std::unique_ptr<Vector> Matrix::multiply(Vector& in) {
+std::unique_ptr<Vector> Matrix::multiply(std::unique_ptr<Vector> in) {
 
-    if (in.get_size() != this->n) {
-        std::cout << "Tried to multiply a vector of size " << in.get_size()
+    if (in->get_size() != this->n) {
+        std::cout << "Tried to multiply a vector of size " << in->get_size()
         << " with a matrix containing " << this->n << " columns." << std::endl;
     }
 
@@ -40,7 +40,7 @@ std::unique_ptr<Vector> Matrix::multiply(Vector& in) {
 
     for (int i = 0; i < this->m; ++i) {
         for (int j = 0; j < this->n; ++j)
-            ret->add_entry(i, in.get_entry(j) * this->entries[get_position(i, j)]);
+            ret->add_entry(i, in->get_entry(j) * this->entries[get_position(i, j)]);
     }
 
     return ret;
