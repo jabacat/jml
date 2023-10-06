@@ -57,9 +57,14 @@ class Model {
 public:
     Model();
     std::unique_ptr<Vector> apply(Vector& in);
+    void add_testing_data (std::vector<Vector> ins, std::vector<Vector> outs);
+    void add_testing_datum(Vector in, Vector out);
+    void clear_testing_data();
 
 private:
-    std::vector<Model_Layer> layers; // Array of layer addresses
+    std::vector<Model_Layer> layers; // Array of layers
+    std::vector<Vector> inputs;
+    std::vector<Vector> outputs;
 
 };
 
