@@ -57,9 +57,20 @@ class Model {
 public:
     Model();
     std::unique_ptr<Vector> apply(Vector& in);
+    // Adds testing data using iterators, for the start and end locations of
+    // the wanted input and output data lists.
+    void add_testing_data (
+        std::vector<Vector>::iterator inb, std::vector<Vector>::iterator ine,
+        std::vector<Vector>::iterator otb, std::vector<Vector>::iterator ote
+    );
+    void add_testing_data (std::vector<Vector> ins, std::vector<Vector> outs);
+    void add_testing_datum(Vector in, Vector out);
+    void clear_testing_data();
 
 private:
-    std::vector<Model_Layer> layers; // Array of layer addresses
+    std::vector<Model_Layer> layers; // Array of layers
+    std::vector<Vector> testing_data_inputs;
+    std::vector<Vector> testing_data_outputs;
 
 };
 
