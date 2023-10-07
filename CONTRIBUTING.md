@@ -10,9 +10,11 @@ these guidelines to keep with our current practices.
 
 ## GitHub branches and forks
 
-We ask that you not push any code directly to our main repositories, unless it
-is the very first commit to the repository. Any commits that are directly pushed
-will be reverted.
+We ask that you not push any code directly to our repositories (the ones on
+`https://github.com/jabacat/`), unless it is the very first commit to the
+repository. Any commits that are directly pushed will be reverted. As outlined
+below, please commit code to `https://github.com/yourusername/` and then make
+a PR.
 
 ## How should I contribute my changes then?
 
