@@ -19,18 +19,18 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
 }
 
 void Model::add_testing_data(std::vector<Vector> ins, std::vector<Vector> outs) {
-    inputs .insert(std::end(inputs),  std::begin(ins),  std::end(ins));
-    outputs.insert(std::end(outputs), std::begin(outs), std::end(outs));
+    testing_data_inputs .insert(std::end(testing_data_inputs),  std::begin(ins),  std::end(ins));
+    testing_data_outputs.insert(std::end(testing_data_outputs), std::begin(outs), std::end(outs));
 }
 
 void Model::add_testing_datum(Vector in, Vector out) {
-    inputs .push_back(in);
-    outputs.push_back(out);
+    testing_data_inputs .push_back(in);
+    testing_data_outputs.push_back(out);
 }
 
 void Model::clear_testing_data() {
-    inputs .clear();
-    outputs.clear();
+    testing_data_inputs .clear();
+    testing_data_outputs.clear();
 }
 
 }

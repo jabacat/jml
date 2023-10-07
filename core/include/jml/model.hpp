@@ -63,8 +63,8 @@ public:
 
 private:
     std::vector<Model_Layer> layers; // Array of layers
-    std::vector<Vector> inputs;
-    std::vector<Vector> outputs;
+    std::vector<Vector> testing_data_inputs;
+    std::vector<Vector> testing_data_outputs;
 
 };
 
