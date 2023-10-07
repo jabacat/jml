@@ -18,9 +18,16 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
 
 }
 
+void Model::add_testing_data (
+    std::vector<Vector>::iterator inb, std::vector<Vector>::iterator ine,
+    std::vector<Vector>::iterator otb, std::vector<Vector>::iterator ote
+) {
+    testing_data_inputs .insert(std::end(testing_data_inputs),  inb, ine);
+    testing_data_outputs.insert(std::end(testing_data_outputs), otb, ote);
+}
+
 void Model::add_testing_data(std::vector<Vector> ins, std::vector<Vector> outs) {
-    testing_data_inputs .insert(std::end(testing_data_inputs),  std::begin(ins),  std::end(ins));
-    testing_data_outputs.insert(std::end(testing_data_outputs), std::begin(outs), std::end(outs));
+    return add_testing_data(std::begin(ins), std::end(ins), std::begin(outs), std::end(outs));
 }
 
 void Model::add_testing_datum(Vector in, Vector out) {
