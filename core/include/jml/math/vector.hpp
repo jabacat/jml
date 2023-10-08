@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <functional>
+#include <jml/math/activation_functions.hpp>
 
 namespace jml {
 
@@ -22,7 +22,7 @@ public:
     ~Vector();
 
     // This applies a given function to every component in the vector.
-    void apply(std::function<double (double)> fn);
+    void apply(ActivationFunction * fn);
 
     // This adds every entry in v to this vector.
     void add(Vector& v);
