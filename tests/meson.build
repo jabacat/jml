@@ -1,4 +1,8 @@
-test_sources = ['core.cpp',
-                'math/matrix.cpp']
-tests = executable('tests', test_sources, dependencies: [catch2_dep])
-test('tests', tests, args: ['--reporter', 'TAP'], protocol: 'tap')
+core_test_sources = [
+    'core/math/test_matrix.cpp',
+]
+
+tests = executable('core_tests',
+                   core_test_sources,
+                   dependencies: [catch2_dep, jmlcore_dep])
+test('core', tests, args: ['--reporter', 'TAP'], protocol: 'tap')
