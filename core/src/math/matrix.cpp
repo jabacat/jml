@@ -12,6 +12,14 @@ Matrix::~Matrix() {
     delete this->entries;
 }
 
+int Matrix::get_rows() {
+    return m;
+}
+
+int Matrix::get_cols() {
+    return n;
+}
+
 int Matrix::get_position(int i, int j) {
     return i * this->n + j;
 }
