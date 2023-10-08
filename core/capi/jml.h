@@ -21,17 +21,17 @@ int jml_vector_add(unsigned v1, unsigned v2);
  */
 int jml_vector_add_entry(unsigned vid, int pos, double val);
 
-enum JMLActivFunc {
+typedef enum JMLActivFunc {
     JACT_FSIG,
     JACT_SIG,
     JACT_RELU,
-};
+} JMLActivFunc;
 
 /**
  * We use an enum to specify a type of activation function. TODO: make this
  * fully equivalent to the C++ API.
  */
-int jml_vector_apply(unsigned vid, enum JMLActivFunc val);
+int jml_vector_apply(unsigned vid, JMLActivFunc val);
 
 double jml_vector_get_entry(unsigned vid, int pos);
 

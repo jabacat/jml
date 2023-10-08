@@ -28,7 +28,7 @@ int jml_vector_add_entry(unsigned vid, int pos, double val) {
     return 0;
 }
 
-int jml_vector_apply(unsigned vid, enum JMLActivFunc val) {
+int jml_vector_apply(unsigned vid, JMLActivFunc val) {
     jml::Vector& v = vector_lookup_(vid);
     jml::ActivationFunction * a;
     switch (val) {
