@@ -1,5 +1,7 @@
-# jml ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jabacat/jml/build-test.yml?style=for-the-badge)
+# jml 
 JABACAT-created machine learning library from scratch.
+
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jabacat/jml/build-test.yml?style=for-the-badge)
 
 ## Build
 > [!IMPORTANT]
