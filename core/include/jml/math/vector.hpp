@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include <jml/math/activation_functions.hpp>
 
 namespace jml {
@@ -24,7 +22,7 @@ public:
     ~Vector();
 
     // This applies a given function to every component in the vector.
-    void apply(std::shared_ptr<ActivationFunction> fn);
+    void apply(ActivationFunction * fn);
 
     // This adds every entry in v to this vector.
     void add(Vector& v);
