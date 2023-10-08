@@ -16,11 +16,11 @@ int Matrix::get_position(int i, int j) { return i * this->n + j; }
 void Matrix::set_entry(int i, int j, double value) {
 
     if (i < 0 || i >= this->m) {
-        LOGGER->log(Log() << WARN << "Row number " << i << " out of bounds.");
+        LOGGER->log(Log() << WARN << "Row number " << i << " out of bounds.\n");
     }
     if (j < 0 || j >= this->n) {
         LOGGER->log(Log() << WARN << "Column number " << i
-                          << " out of bounds.");
+                          << " out of bounds.\n");
     }
 
     this->entries[get_position(i, j)] = value;
