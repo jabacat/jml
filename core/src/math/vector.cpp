@@ -18,9 +18,9 @@ Vector::~Vector() {
     delete this->entries;
 }
 
-void Vector::apply(std::function<double (double)> fn) {
+void Vector::apply(std::shared_ptr<ActivationFunction> fn) {
     for (int i = 0; i < this->length; ++i) {
-        this->entries[i] = fn(this->entries[i]);
+        this->entries[i] = fn->f(this->entries[i]);
     }
 }
 

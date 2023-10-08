@@ -27,7 +27,7 @@ public:
      Matrix(int m, int n);
     ~Matrix();
     void set_entry(int i, int j, double value);
-    std::unique_ptr<Vector> multiply(Vector& in);
+    std::unique_ptr<Vector> multiply(std::unique_ptr<Vector>);
 
 };
 
