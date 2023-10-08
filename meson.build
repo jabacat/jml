@@ -1,5 +1,6 @@
 project('jml', 'cpp',
-        default_options: ['cpp_std=c++14'])
+        default_options: ['cpp_std=c++14'],
+        meson_version: '>=1.2.0')
 
 core_inc = include_directories('core/include')
 
