@@ -10,7 +10,7 @@
 
 namespace jml {
 
-class Vector {
+class JML_API Vector {
 
     int length; // The number of entries in the vector
 

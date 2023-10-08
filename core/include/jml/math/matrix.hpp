@@ -10,10 +10,11 @@
 #include <memory>
 
 #include <jml/math/vector.hpp>
+#include <jml/jmldefs.h>
 
 namespace jml {
 
-class Matrix {
+class JML_API Matrix {
 
 int m; // Number of rows
 int n; // Number of columns
@@ -21,7 +22,7 @@ int n; // Number of columns
 double * entries;
 
 // This gets the array position for a particular row and column combination.
-int get_position(int i, int j);
+int JML_LOCAL get_position(int i, int j);
 
 public:
      Matrix(int m, int n);
