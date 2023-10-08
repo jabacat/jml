@@ -40,6 +40,7 @@ int jml_vector_apply(unsigned vid, enum JMLActivFunc val) {
             a = new jml::ReLU();
     }
     v.apply(a);
+    delete a;
     return 0;
 }
 
