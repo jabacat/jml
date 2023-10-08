@@ -11,7 +11,7 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
         outp = ml.matrix.multiply(std::move(inp));
         inp = std::move(outp);
         inp->add(ml.bias_vector);
-        inp->apply(ml.act);
+        inp->apply(ml.act.get());
     }
 
     return inp;

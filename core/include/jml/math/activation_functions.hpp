@@ -12,11 +12,11 @@ class ActivationFunction {
     virtual double f(double x) = 0;
     virtual double df(double x) = 0;
 
-    virtual double f_precomp() = 0;
-    virtual double df_precomp() = 0;
+    virtual double f_precomp();
+    virtual double df_precomp();
 };
 
-class FastSigmoid : private ActivationFunction {
+class FastSigmoid : public ActivationFunction {
     // If you know you are going to call f at least once then df at least once
     // afterwards (In that order!), then you can use f_precomp and df_precomp
     // f_precomp will compute common values that are shared in df_precomp
@@ -39,7 +39,7 @@ class FastSigmoid : private ActivationFunction {
     double precomputed;
 };
 
-class Sigmoid : private ActivationFunction {
+class Sigmoid : public ActivationFunction {
   public:
     Sigmoid();
 
@@ -47,7 +47,7 @@ class Sigmoid : private ActivationFunction {
     double df(double x);
 };
 
-class ReLU : private ActivationFunction {
+class ReLU : public ActivationFunction {
   public:
     ReLU();
 
@@ -55,7 +55,7 @@ class ReLU : private ActivationFunction {
     double df(double x);
 };
 
-class LeakyReLU : private ActivationFunction {
+class LeakyReLU : public ActivationFunction {
   public:
     LeakyReLU();
     LeakyReLU(double x);
