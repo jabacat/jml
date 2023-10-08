@@ -8,7 +8,6 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
 
 namespace jml {
 
@@ -21,30 +20,41 @@ const std::string get_severity_text(enum Severity s);
 
 class Log {
   private:
-    const enum Severity severity;
-    const std::string message;
+    enum Severity severity;
+    std::string message;
 
   public:
+    Log &operator<<(enum Severity s);
+    Log &operator<<(std::string m);
+    Log &operator<<(int m);
+
+    enum Severity get_severity();
+    std::string get_message();
+
+    Log();
+    Log(enum Severity s);
     Log(enum Severity s, std::string m);
-    // Render the log message to a string
-    std::string render();
-    // Render and then print the message to stderr for WARN and FATAL
-    // and to stdout for DEBUG and INFO
-    void print();
-    const enum Severity get_severity();
 };
 
 class Logger {
   private:
-    std::vector<Log> logs;
     enum Severity global_log_level;
+    static Logger *_instance;
+
+    Logger();
+    Logger(enum Severity s);
 
   public:
-    Logger();
-    Logger(enum Severity global_log_level);
+    static Logger *Instance();
+    static Logger *Instance(enum Severity s);
+
+    std::string render(Log l);
+
     // Add log to the logs vector and display it if it's the correct logging
     // level or more severe
     void log(enum Severity s, std::string m);
+    void log(Log l);
+
     void set_global_log_level(enum Severity s);
 };
 
