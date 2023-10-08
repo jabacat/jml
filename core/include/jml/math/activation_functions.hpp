@@ -12,8 +12,8 @@ class ActivationFunction {
     virtual double f(double x) = 0;
     virtual double df(double x) = 0;
 
-    virtual double f_precomp() = 0;
-    virtual double df_precomp() = 0;
+    virtual double f_precomp();
+    virtual double df_precomp();
 };
 
 class FastSigmoid : public ActivationFunction {
