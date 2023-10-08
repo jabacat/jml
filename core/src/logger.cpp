@@ -1,5 +1,6 @@
 #include <internal/logger.hpp>
 #include <iostream>
+#include <string>
 
 namespace jml {
 
