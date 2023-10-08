@@ -12,11 +12,11 @@ Matrix::~Matrix() {
     delete this->entries;
 }
 
-int Matrix::get_rows() {
+int Matrix::get_n_rows() {
     return m;
 }
 
-int Matrix::get_cols() {
+int Matrix::get_n_cols() {
     return n;
 }
 

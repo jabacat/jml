@@ -26,8 +26,8 @@ int get_position(int i, int j);
 public:
      Matrix(int m, int n);
     ~Matrix();
-    int get_rows();
-    int get_cols();
+    int get_n_rows();
+    int get_n_cols();
     void set_entry(int i, int j, double value);
     std::unique_ptr<Vector> multiply(std::unique_ptr<Vector>);
 
