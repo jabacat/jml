@@ -27,26 +27,16 @@ Log &Log::operator<<(int m) {
     return *this;
 }
 
-Log::Log() {}
 Log::Log(enum Severity s) : severity(s) {}
 Log::Log(enum Severity s, std::string m) : severity(s), message(m) {}
 
 Logger *Logger::_instance = nullptr;
-Logger *Logger::Instance() {
-    if (_instance == nullptr) {
-        _instance = new Logger;
-    }
-    return _instance;
-}
-
 Logger *Logger::Instance(enum Severity s) {
     if (_instance == nullptr) {
         _instance = new Logger(s);
     }
     return _instance;
 }
-
-Logger::Logger() { this->global_log_level = WARN; }
 
 Logger::Logger(enum Severity s) { this->global_log_level = s; }
 

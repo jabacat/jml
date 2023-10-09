@@ -31,8 +31,7 @@ class Log {
     enum Severity get_severity();
     std::string get_message();
 
-    Log();
-    Log(enum Severity s);
+    Log(enum Severity s = WARN);
     Log(enum Severity s, std::string m);
 };
 
@@ -41,12 +40,10 @@ class Logger {
     enum Severity global_log_level;
     static Logger *_instance;
 
-    Logger();
-    Logger(enum Severity s);
+    Logger(enum Severity s = WARN);
 
   public:
-    static Logger *Instance();
-    static Logger *Instance(enum Severity s);
+    static Logger *Instance(enum Severity s = WARN);
 
     std::string render(Log l);
 
