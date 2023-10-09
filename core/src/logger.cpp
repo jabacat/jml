@@ -62,17 +62,7 @@ void Logger::log(enum Severity s, std::string m) {
 void Logger::log(Log l) {
     // Print log if log level is low enough for l
     if (l.get_severity() >= this->global_log_level) {
-        switch (l.get_severity()) {
-        case DEBUG:
-        case INFO:
-            std::cout << this->render(l);
-            return;
-        case WARN:
-        case ERR:
-        case FATAL:
-            std::cerr << this->render(l);
-            return;
-        }
+        std::cerr << this->render(l);
     }
 }
 
