@@ -14,7 +14,7 @@ namespace jml {
 enum Severity { DEBUG, INFO, WARN, ERR, FATAL };
 
 static const std::string severity_text[] = {"DEBUG", "INFO", "WARN", "ERR",
-                                            "FATAl"};
+                                            "FATAL"};
 
 const std::string get_severity_text(enum Severity s);
 

@@ -31,16 +31,16 @@ Log::Log() {}
 Log::Log(enum Severity s) : severity(s) {}
 Log::Log(enum Severity s, std::string m) : severity(s), message(m) {}
 
-Logger *Logger::_instance = 0;
+Logger *Logger::_instance = nullptr;
 Logger *Logger::Instance() {
-    if (_instance == 0) {
+    if (_instance == nullptr) {
         _instance = new Logger;
     }
     return _instance;
 }
 
 Logger *Logger::Instance(enum Severity s) {
-    if (_instance == 0) {
+    if (_instance == nullptr) {
         _instance = new Logger(s);
     }
     return _instance;
