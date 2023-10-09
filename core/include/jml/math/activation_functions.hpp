@@ -5,9 +5,11 @@
 
 #pragma once
 
+#include <jml/jmldefs.h>
+
 namespace jml {
 
-class ActivationFunction {
+class JML_API ActivationFunction {
   public:
     virtual double f(double x) = 0;
     virtual double df(double x) = 0;
@@ -16,7 +18,7 @@ class ActivationFunction {
     virtual double df_precomp();
 };
 
-class FastSigmoid : public ActivationFunction {
+class JML_API FastSigmoid : public ActivationFunction {
     // If you know you are going to call f at least once then df at least once
     // afterwards (In that order!), then you can use f_precomp and df_precomp
     // f_precomp will compute common values that are shared in df_precomp
@@ -39,7 +41,7 @@ class FastSigmoid : public ActivationFunction {
     double precomputed;
 };
 
-class Sigmoid : public ActivationFunction {
+class JML_API Sigmoid : public ActivationFunction {
   public:
     Sigmoid();
 
@@ -47,7 +49,7 @@ class Sigmoid : public ActivationFunction {
     double df(double x);
 };
 
-class ReLU : public ActivationFunction {
+class JML_API ReLU : public ActivationFunction {
   public:
     ReLU();
 
@@ -55,7 +57,7 @@ class ReLU : public ActivationFunction {
     double df(double x);
 };
 
-class LeakyReLU : public ActivationFunction {
+class JML_API LeakyReLU : public ActivationFunction {
   public:
     LeakyReLU();
     LeakyReLU(double x);
