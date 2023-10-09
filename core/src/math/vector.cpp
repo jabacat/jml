@@ -53,7 +53,7 @@ void Vector::set_entry(int pos, double val) {
 
 void Vector::add_entry(int pos, double val) {
     if (pos < 0 || pos >= this->length) {
-        LOGGER->log(Log(WARN) << "Position " << pos << " out of bounds.\n");
+        LOGGER->log(Log(ERR) << "Position " << pos << " out of bounds.\n");
     }
     this->entries[pos] += val;
 }
