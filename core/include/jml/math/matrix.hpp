@@ -10,27 +10,29 @@
 #include <memory>
 
 #include <jml/math/vector.hpp>
+#include <internal/logger.hpp>
 
 namespace jml {
 
+extern Logger *LOGGER;
+
 class Matrix {
 
-int m; // Number of rows
-int n; // Number of columns
+    int m; // Number of rows
+    int n; // Number of columns
 
-double * entries;
+    double *entries;
 
-// This gets the array position for a particular row and column combination.
-int get_position(int i, int j);
+    // This gets the array position for a particular row and column combination.
+    int get_position(int i, int j);
 
-public:
-     Matrix(int m, int n);
+  public:
+    Matrix(int m, int n);
     ~Matrix();
     int get_n_rows();
     int get_n_cols();
     void set_entry(int i, int j, double value);
     std::unique_ptr<Vector> multiply(std::unique_ptr<Vector>);
-
 };
 
-}
+} // namespace jml

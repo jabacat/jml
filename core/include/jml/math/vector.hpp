@@ -7,8 +7,11 @@
 #pragma once
 
 #include <jml/math/activation_functions.hpp>
+#include <internal/logger.hpp>
 
 namespace jml {
+
+extern Logger *LOGGER;
 
 class Vector {
 
