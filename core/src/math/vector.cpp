@@ -39,14 +39,14 @@ int Vector::get_size() { return this->length; }
 
 double Vector::get_entry(int pos) {
     if (pos < 0 || pos >= this->length) {
-        LOGGER->log(Log(WARN) << "Position " << pos << " out of bounds.\n");
+        LOGGER->log(Log(ERR) << "Position " << pos << " out of bounds.\n");
     }
     return this->entries[pos];
 }
 
 void Vector::set_entry(int pos, double val) {
     if (pos < 0 || pos >= this->length) {
-        LOGGER->log(Log(WARN) << "Position " << pos << " out of bounds.\n");
+        LOGGER->log(Log(ERR) << "Position " << pos << " out of bounds.\n");
     }
     this->entries[pos] = val;
 }

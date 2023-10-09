@@ -18,10 +18,10 @@ int Matrix::get_n_cols() { return n; }
 void Matrix::set_entry(int i, int j, double value) {
 
     if (i < 0 || i >= this->m) {
-        LOGGER->log(Log() << WARN << "Row number " << i << " out of bounds.\n");
+        LOGGER->log(Log() << ERR << "Row number " << i << " out of bounds.\n");
     }
     if (j < 0 || j >= this->n) {
-        LOGGER->log(Log() << WARN << "Column number " << i
+        LOGGER->log(Log() << ERR << "Column number " << i
                           << " out of bounds.\n");
     }
 
