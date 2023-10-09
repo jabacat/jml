@@ -1,5 +1,5 @@
 #include <jml/math/vector.hpp>
-#include <internal/logger.hpp>
+#include <jml/internal/logger.hpp>
 
 #include <cstring>
 #include <iostream>
