@@ -1,3 +1,7 @@
+#ifndef JMLDEFS_H
+#define JMLDEFS_H
+
+// stolen from https://gcc.gnu.org/wiki/Visibility
 // Generic helper definitions for shared library support
 #if defined _WIN32 || defined __CYGWIN__
   #define JML_HELPER_DLL_IMPORT __declspec(dllimport)
@@ -30,3 +34,5 @@
   #define JML_API
   #define JML_LOCAL
 #endif // JML_DLL
+
+#endif
