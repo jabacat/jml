@@ -11,7 +11,7 @@
 
 #include <jml/math/vector.hpp>
 #include <jml/jmldefs.h>
-#include <internal/logger.hpp>
+#include <jml/internal/logger.hpp>
 
 namespace jml {
 

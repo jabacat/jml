@@ -8,7 +8,7 @@
 
 #include <jml/math/activation_functions.hpp>
 #include <jml/jmldefs.h>
-#include <internal/logger.hpp>
+#include <jml/internal/logger.hpp>
 
 namespace jml {
 
