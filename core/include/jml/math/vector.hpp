@@ -7,6 +7,7 @@
 #pragma once
 
 #include <jml/math/activation_functions.hpp>
+#include <jml/jmldefs.h>
 #include <internal/logger.hpp>
 
 namespace jml {

@@ -13,6 +13,7 @@
 
 #include <jml/math/matrix.hpp>
 #include <jml/math/vector.hpp>
+#include <jml/jmldefs.h>
 
 namespace jml {
 
