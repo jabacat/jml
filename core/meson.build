@@ -1,3 +1,6 @@
+# includes
+core_inc = include_directories('include', 'capi')
+
 # set c++ visiblity if building as a shared library
 if get_option('default_library') == 'shared'
     core_dll_defs = ['-DJML_DLL', '-DJML_DLL_EXPORTS']

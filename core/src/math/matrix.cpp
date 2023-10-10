@@ -1,5 +1,5 @@
 #include <jml/math/matrix.hpp>
-#include <internal/logger.hpp>
+#include <jml/internal/logger.hpp>
 
 #include <iostream>
 
