@@ -7,18 +7,19 @@
 
 #pragma once
 
+#include <jml/jmldefs.h>
 #include <iostream>
 
 namespace jml {
 
-enum Severity { DEBUG, INFO, WARN, ERR, FATAL };
+enum JML_LOCAL Severity { DEBUG, INFO, WARN, ERR, FATAL };
 
 static const std::string severity_text[] = {"DEBUG", "INFO", "WARN", "ERR",
                                             "FATAL"};
 
-const std::string get_severity_text(enum Severity s);
+const JML_LOCAL std::string get_severity_text(enum Severity s);
 
-class Log {
+class JML_LOCAL Log {
   private:
     enum Severity severity;
     std::string message;
@@ -35,7 +36,7 @@ class Log {
     Log(enum Severity s, std::string m);
 };
 
-class Logger {
+class JML_LOCAL Logger {
   private:
     enum Severity global_log_level;
     static Logger *_instance;

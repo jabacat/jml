@@ -13,6 +13,7 @@
 
 #include <jml/math/matrix.hpp>
 #include <jml/math/vector.hpp>
+#include <jml/jmldefs.h>
 
 namespace jml {
 
@@ -33,7 +34,7 @@ private:
 }; */
 
 // TODO: separate into different kinds of layers.
-class Model_Layer {
+class JML_API Model_Layer {
 
 friend class Model;
 
@@ -45,13 +46,13 @@ private:
 };
 
 // Transition class for loading in/saving model, includes parameters and activation func ID's (enum <-> func pointer mappings?)
-class Model_Layer_Compressed {
+class JML_API Model_Layer_Compressed {
 
     friend class Model_Layer;
 
 };
 
-class Model {
+class JML_API Model {
     // friend class Model_Layer_Hidden;
 
 public:

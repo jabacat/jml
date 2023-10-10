@@ -7,13 +7,14 @@
 #pragma once
 
 #include <jml/math/activation_functions.hpp>
+#include <jml/jmldefs.h>
 #include <internal/logger.hpp>
 
 namespace jml {
 
 extern Logger *LOGGER;
 
-class Vector {
+class JML_API Vector {
 
     int length; // The number of entries in the vector
 
