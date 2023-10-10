@@ -5,9 +5,9 @@
 
 namespace jml {
 
-Matrix::Matrix(int m, int n) { this->entries = new double(m * n); }
+Matrix::Matrix(int m, int n): m(m), n(n) { this->entries = new double[m * n]; }
 
-Matrix::~Matrix() { delete this->entries; }
+Matrix::~Matrix() { delete[] this->entries; }
 
 int Matrix::get_position(int i, int j) { return i * this->n + j; }
 

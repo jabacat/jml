@@ -10,13 +10,13 @@ Logger *LOGGER = Logger::Instance();
 
 Vector::Vector(int length) {
 
-    this->entries = new double(length);
+    this->entries = new double[length];
     memset(this->entries, 0, length * sizeof(double));
 
     this->length = length;
 }
 
-Vector::~Vector() { delete this->entries; }
+Vector::~Vector() { delete[] this->entries; }
 
 void Vector::apply(ActivationFunction *fn) {
     for (int i = 0; i < this->length; ++i) {
