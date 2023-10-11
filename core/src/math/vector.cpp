@@ -35,9 +35,9 @@ void Vector::add(Vector &v) {
     }
 }
 
-int Vector::get_size() { return this->length; }
+int Vector::get_size() const { return this->length; }
 
-double Vector::get_entry(int pos) {
+double Vector::get_entry(int pos) const {
     if (pos < 0 || pos >= this->length) {
         LOGGER->log(Log(ERR) << "Position " << pos << " out of bounds.\n");
     }

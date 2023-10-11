@@ -33,7 +33,7 @@ class JML_API Matrix {
     int get_n_rows();
     int get_n_cols();
     void set_entry(int i, int j, double value);
-    std::unique_ptr<Vector> multiply(std::unique_ptr<Vector>);
+    std::unique_ptr<Vector> multiply(const Vector& in);
 };
 
 } // namespace jml
