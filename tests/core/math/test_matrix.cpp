@@ -2,17 +2,23 @@
 #include "jml/math/vector.hpp"
 #include <jml/math/matrix.hpp>
 #include <memory>
+#include <stdexcept>
 
 TEST_CASE("matrix getters and setters", "[matrix]") {
     // Create and initialize matrix
     jml::Matrix m(2, 3);
 
+    // Set matrix
+    // TODO: should probably check for no throw here
     m.set_entry(0, 0, 1);
     m.set_entry(1, 0, 2);
     m.set_entry(0, 1, 3);
     m.set_entry(1, 1, 4);
     m.set_entry(0, 2, 5);
     m.set_entry(1, 2, 6);
+
+    // make sure it throws when oob
+    REQUIRE_THROWS_AS(m.set_entry(999, 999, 1.0), std::out_of_range);
 
     REQUIRE(m.get_n_rows() == 2);
     REQUIRE(m.get_n_cols() == 3);
@@ -23,6 +29,8 @@ TEST_CASE("matrix getters and setters", "[matrix]") {
     REQUIRE(m.get_entry(1, 1) == 4);
     REQUIRE(m.get_entry(0, 2) == 5);
     REQUIRE(m.get_entry(1, 2) == 6);
+
+    REQUIRE_THROWS_AS(m.get_entry(999, 999), std::out_of_range);
 }
 
 SCENARIO("Matricies are correctly multiplied with vectors",

@@ -2,6 +2,7 @@
 #include <jml/internal/logger.hpp>
 
 #include <iostream>
+#include <stdexcept>
 
 namespace jml {
 
@@ -19,10 +20,12 @@ void Matrix::set_entry(int i, int j, double value) {
 
     if (i < 0 || i >= this->m) {
         LOGGER->log(Log() << ERR << "Row number " << i << " out of bounds.\n");
+        throw std::out_of_range("row out of bounds");
     }
     if (j < 0 || j >= this->n) {
         LOGGER->log(Log() << ERR << "Column number " << i
                           << " out of bounds.\n");
+        throw std::out_of_range("column out of bounds");
     }
 
     this->entries[get_position(i, j)] = value;
@@ -31,10 +34,12 @@ void Matrix::set_entry(int i, int j, double value) {
 double Matrix::get_entry(const int i, const int j) const {
     if (i < 0 || i >= this->m) {
         LOGGER->log(Log() << ERR << "Row number " << i << " out of bounds.\n");
+        throw std::out_of_range("row out of bounds");
     }
     if (j < 0 || j >= this->n) {
         LOGGER->log(Log() << ERR << "Column number " << i
                           << " out of bounds.\n");
+        throw std::out_of_range("column out of bounds");
     }
 
     return this->entries[get_position(i, j)];
