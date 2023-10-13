@@ -25,15 +25,16 @@ class JML_API Matrix {
     double *entries;
 
     // This gets the array position for a particular row and column combination.
-    int JML_LOCAL get_position(int i, int j);
+    int JML_LOCAL get_position(int i, int j) const;
 
   public:
     Matrix(int m, int n);
     ~Matrix();
-    int get_n_rows();
-    int get_n_cols();
+    int get_n_rows() const;
+    int get_n_cols() const;
     void set_entry(int i, int j, double value);
-    std::unique_ptr<Vector> multiply(const Vector& in);
+    double get_entry(const int i, const int j) const;
+    std::unique_ptr<Vector> multiply(const Vector& in) const;
 };
 
 } // namespace jml

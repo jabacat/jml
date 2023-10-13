@@ -9,11 +9,11 @@ Matrix::Matrix(int m, int n): m(m), n(n) { this->entries = new double[m * n]; }
 
 Matrix::~Matrix() { delete[] this->entries; }
 
-int Matrix::get_position(int i, int j) { return i * this->n + j; }
+int Matrix::get_position(int i, int j) const { return i * this->n + j; }
 
-int Matrix::get_n_rows() { return m; }
+int Matrix::get_n_rows() const { return m; }
 
-int Matrix::get_n_cols() { return n; }
+int Matrix::get_n_cols() const { return n; }
 
 void Matrix::set_entry(int i, int j, double value) {
 
@@ -28,7 +28,19 @@ void Matrix::set_entry(int i, int j, double value) {
     this->entries[get_position(i, j)] = value;
 }
 
-std::unique_ptr<Vector> Matrix::multiply(const Vector& in) {
+double Matrix::get_entry(const int i, const int j) const {
+    if (i < 0 || i >= this->m) {
+        LOGGER->log(Log() << ERR << "Row number " << i << " out of bounds.\n");
+    }
+    if (j < 0 || j >= this->n) {
+        LOGGER->log(Log() << ERR << "Column number " << i
+                          << " out of bounds.\n");
+    }
+
+    return this->entries[get_position(i, j)];
+}
+
+std::unique_ptr<Vector> Matrix::multiply(const Vector& in) const {
 
     if (in.get_size() != this->n) {
         LOGGER->log(Log(WARN) << "Tried to multiply a vector of size "
