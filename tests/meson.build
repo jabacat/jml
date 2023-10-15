@@ -1,5 +1,6 @@
 core_test_sources = [
     'core/math/test_matrix.cpp',
+    'core/math/test_activation_functions.cpp',
 ]
 
 tests = executable('core_tests',
