@@ -65,6 +65,8 @@ public:
     void add_testing_data (std::vector<Vector> ins, std::vector<Vector> outs);
     void add_testing_datum(Vector in, Vector out);
     void clear_testing_data();
+    // Gets testing data. First vector is inputs, second vector is outputs.
+    const std::tuple<std::vector<Vector>, std::vector<Vector>> get_testing_data() const;
 
 private:
     std::vector<Model_Layer> layers; // Array of layers

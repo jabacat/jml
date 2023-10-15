@@ -38,4 +38,8 @@ void Model::clear_testing_data() {
     testing_data_outputs.clear();
 }
 
+const std::tuple<std::vector<Vector>, std::vector<Vector>> Model::get_testing_data() const {
+    return {this->testing_data_inputs, this->testing_data_outputs};
+}
+
 }
