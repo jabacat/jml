@@ -38,7 +38,7 @@ jobs:
       - name: Upload test log
         uses: actions/upload-artifact@v3
         with:
-          name: testlog
+          name: testlog-linux
           path: build/meson-logs/testlog.txt
 
   macos:
@@ -71,7 +71,7 @@ jobs:
       - name: Upload test log
         uses: actions/upload-artifact@v3
         with:
-          name: testlog
+          name: testlog-macos
           path: build/meson-logs/testlog.txt
 
   windows-vs:
@@ -104,5 +104,5 @@ jobs:
       - name: Upload test log
         uses: actions/upload-artifact@v3
         with:
-          name: testlog
+          name: testlog-windows
           path: build/meson-logs/testlog.txt
