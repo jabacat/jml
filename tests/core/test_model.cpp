@@ -2,6 +2,7 @@
 #include "jml/math/vector.hpp"
 #include "jml/model.hpp"
 #include <array>
+#include <tuple>
 #include <vector>
 
 SCENARIO("Testing data added to model") {

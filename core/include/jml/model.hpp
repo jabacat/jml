@@ -9,6 +9,7 @@
 #pragma once
 
 #include <memory>
+#include <tuple>
 #include <vector>
 
 #include <jml/math/matrix.hpp>

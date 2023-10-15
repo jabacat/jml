@@ -1,4 +1,5 @@
 #include <jml/model.hpp>
+#include <tuple>
 
 namespace jml {
 
