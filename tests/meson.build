@@ -2,6 +2,7 @@ core_test_sources = [
     'core/math/test_matrix.cpp',
     'core/math/test_vector.cpp',
     'core/math/test_activation_functions.cpp',
+    'core/test_model.cpp',
 ]
 
 tests = executable('core_tests',
