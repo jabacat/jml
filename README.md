@@ -21,7 +21,7 @@ meson install -C build  # again, replace `build`
 ```
 
 ## Test
-This project uses (Catch2)[https://github.com/catchorg/Catch2] as its testing framework.
+This project uses [Catch2](https://github.com/catchorg/Catch2) as its testing framework.
 
 Run `meson test` to test the project.
 ```bash
