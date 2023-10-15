@@ -1,6 +1,9 @@
 #include <jml/model.hpp>
+#include <tuple>
 
 namespace jml {
+
+Model::Model() {}
 
 std::unique_ptr<Vector> Model::apply(Vector& in) {
 
@@ -8,7 +11,7 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
     std::unique_ptr<Vector> outp;
 
     for (Model_Layer ml : this->layers) {
-        outp = ml.matrix.multiply(std::move(inp));
+        outp = ml.matrix.multiply(*inp);
         inp = std::move(outp);
         inp->add(ml.bias_vector);
         inp->apply(ml.act.get());
@@ -16,14 +19,6 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
 
     return inp;
 
-}
-
-void Model::add_testing_data (
-    std::vector<Vector>::iterator inb, std::vector<Vector>::iterator ine,
-    std::vector<Vector>::iterator otb, std::vector<Vector>::iterator ote
-) {
-    testing_data_inputs .insert(std::end(testing_data_inputs),  inb, ine);
-    testing_data_outputs.insert(std::end(testing_data_outputs), otb, ote);
 }
 
 void Model::add_testing_data(std::vector<Vector> ins, std::vector<Vector> outs) {
@@ -38,6 +33,10 @@ void Model::add_testing_datum(Vector in, Vector out) {
 void Model::clear_testing_data() {
     testing_data_inputs .clear();
     testing_data_outputs.clear();
+}
+
+const std::tuple<std::vector<Vector>, std::vector<Vector>> Model::get_testing_data() const {
+    return {this->testing_data_inputs, this->testing_data_outputs};
 }
 
 }

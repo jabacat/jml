@@ -101,3 +101,14 @@ view the API docs for discussion.
 
 The entire project's functionality is in the C++ namespace `jml`, and we prefer
 `snake_case` over `camelCase.`
+
+## Testing
+Though tests are tedious to write, they ensure that our code (somewhat)
+functions consistently and as expected. As such, we encourage you to write
+tests for any code you add. JML uses the popular
+[Catch2](https://github.com/catchorg/Catch2) framework for testing. Their docs,
+located under `docs/` in their repository, should be all you need to write
+tests (they also have a Discord server for support inquiries). How you write,
+express, or format the tests does not matter, as long as they thoroughly test
+the code (and bear some semblance of readability). Make sure to also add your
+test source to the meson build file.

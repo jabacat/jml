@@ -9,6 +9,7 @@
 #pragma once
 
 #include <memory>
+#include <tuple>
 #include <vector>
 
 #include <jml/math/matrix.hpp>
@@ -60,13 +61,13 @@ public:
     std::unique_ptr<Vector> apply(Vector& in);
     // Adds testing data using iterators, for the start and end locations of
     // the wanted input and output data lists.
-    void add_testing_data (
-        std::vector<Vector>::iterator inb, std::vector<Vector>::iterator ine,
-        std::vector<Vector>::iterator otb, std::vector<Vector>::iterator ote
-    );
+    template<typename Iter>
+    void add_testing_data (Iter inb, Iter ine, Iter otb, Iter ote);
     void add_testing_data (std::vector<Vector> ins, std::vector<Vector> outs);
     void add_testing_datum(Vector in, Vector out);
     void clear_testing_data();
+    // Gets testing data. First vector is inputs, second vector is outputs.
+    const std::tuple<std::vector<Vector>, std::vector<Vector>> get_testing_data() const;
 
 private:
     std::vector<Model_Layer> layers; // Array of layers
@@ -76,3 +77,5 @@ private:
 };
 
 }
+
+#include "model.tpp"

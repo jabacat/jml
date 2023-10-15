@@ -17,3 +17,7 @@ test.cpp
 # --------------- #
 .vscode/
 # ----------------#
+
+# Don't commit Catch2 source or wrapdb cache
+subprojects/Catch2-3.4.0
+subprojects/packagecache

@@ -17,3 +17,5 @@ jmlcore = library('jmlcore',
                   install: true,
                   cpp_args: core_dll_defs,
                   gnu_symbol_visibility: 'inlineshidden')
+
+jmlcore_dep = declare_dependency(link_with: jmlcore, include_directories: core_inc)

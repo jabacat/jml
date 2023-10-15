@@ -23,6 +23,7 @@ class JML_API Vector {
 public:
 
      Vector(int length);
+     Vector(const Vector& other);
     ~Vector();
 
     // This applies a given function to every component in the vector.
@@ -31,9 +32,9 @@ public:
     // This adds every entry in v to this vector.
     void add(Vector& v);
 
-    int get_size();
+    int get_size() const;
 
-    double get_entry(int pos);
+    double get_entry(int pos) const;
     void set_entry(int pos, double val);
     void add_entry(int pos, double val); // Adds val to the current value in pos.
 

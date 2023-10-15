@@ -35,6 +35,12 @@ jobs:
       - name: Test with Meson
         run: meson test -C build
 
+      - name: Upload test log
+        uses: actions/upload-artifact@v3
+        with:
+          name: testlog-linux
+          path: build/meson-logs/testlog.txt
+
   macos:
     name: Build and Test on macOS
     runs-on: macos-latest
@@ -62,6 +68,12 @@ jobs:
       - name: Test with Meson
         run: meson test -C build
 
+      - name: Upload test log
+        uses: actions/upload-artifact@v3
+        with:
+          name: testlog-macos
+          path: build/meson-logs/testlog.txt
+
   windows-vs:
     name: Build and Test on Windows (Visual Studio)
     runs-on: windows-latest
@@ -88,3 +100,9 @@ jobs:
 
       - name: Test with Meson
         run: meson test -C build
+
+      - name: Upload test log
+        uses: actions/upload-artifact@v3
+        with:
+          name: testlog-windows
+          path: build/meson-logs/testlog.txt

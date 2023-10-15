@@ -21,10 +21,11 @@ meson install -C build  # again, replace `build`
 ```
 
 ## Test
-> [!WARNING]
-> Add relevant information once testing framework is setup
+This project uses [Catch2](https://github.com/catchorg/Catch2) as its testing framework.
 
 Run `meson test` to test the project.
 ```bash
 meson test -C build     # replace `build`
 ```
+
+Unfortunately, meson doesn't provide good output when a test fails. Running the test executable manually is often more helpful. Look under `build/tests/` to find the right executable. The executable for testing the core library is `core_tests`.

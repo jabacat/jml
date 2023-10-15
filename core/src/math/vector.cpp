@@ -10,13 +10,19 @@ Logger *LOGGER = Logger::Instance();
 
 Vector::Vector(int length) {
 
-    this->entries = new double(length);
+    this->entries = new double[length];
     memset(this->entries, 0, length * sizeof(double));
 
     this->length = length;
 }
 
-Vector::~Vector() { delete this->entries; }
+Vector::Vector(const Vector& other) {
+    this->length = other.length;
+    this->entries = new double[this->length];
+    memcpy(this->entries, other.entries, this->length * sizeof(double));
+}
+
+Vector::~Vector() { delete[] this->entries; }
 
 void Vector::apply(ActivationFunction *fn) {
     for (int i = 0; i < this->length; ++i) {
@@ -35,9 +41,9 @@ void Vector::add(Vector &v) {
     }
 }
 
-int Vector::get_size() { return this->length; }
+int Vector::get_size() const { return this->length; }
 
-double Vector::get_entry(int pos) {
+double Vector::get_entry(int pos) const {
     if (pos < 0 || pos >= this->length) {
         LOGGER->log(Log(ERR) << "Position " << pos << " out of bounds.\n");
     }
