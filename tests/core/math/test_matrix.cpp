@@ -4,36 +4,47 @@
 #include <memory>
 #include <stdexcept>
 
-TEST_CASE("matrix getters and setters", "[matrix]") {
-    // Create and initialize matrix
-    jml::Matrix m(2, 3);
+SCENARIO("Matrix entries can be set and get", "[matrix]") {
+    GIVEN("a matrix of some size") {
+        // Create and initialize matrix
+        jml::Matrix m(2, 3);
 
-    // Set matrix
-    // TODO: should probably check for no throw here
-    m.set_entry(0, 0, 1);
-    m.set_entry(1, 0, 2);
-    m.set_entry(0, 1, 3);
-    m.set_entry(1, 1, 4);
-    m.set_entry(0, 2, 5);
-    m.set_entry(1, 2, 6);
+        THEN("the size is correct") {
+            REQUIRE(m.get_n_rows() == 2);
+            REQUIRE(m.get_n_cols() == 3);
+        }
 
-    // make sure it throws when oob
-    REQUIRE_THROWS_AS(m.set_entry(999, 999, 1.0), std::out_of_range);
+        WHEN("the values are set") {
+            // Set matrix
+            // TODO: should probably check for no throw here
+            REQUIRE_NOTHROW([&m]() {
+                m.set_entry(0, 0, 1);
+                m.set_entry(1, 0, 2);
+                m.set_entry(0, 1, 3);
+                m.set_entry(1, 1, 4);
+                m.set_entry(0, 2, 5);
+                m.set_entry(1, 2, 6);
+            }());
+            
+            THEN("the stored values are correct") {
+                REQUIRE(m.get_entry(0, 0) == 1);
+                REQUIRE(m.get_entry(1, 0) == 2);
+                REQUIRE(m.get_entry(0, 1) == 3);
+                REQUIRE(m.get_entry(1, 1) == 4);
+                REQUIRE(m.get_entry(0, 2) == 5);
+                REQUIRE(m.get_entry(1, 2) == 6);
+            }
+        }
 
-    REQUIRE(m.get_n_rows() == 2);
-    REQUIRE(m.get_n_cols() == 3);
+        THEN("getting and setting out-of-bound entries throws out of range") {
+            REQUIRE_THROWS_AS(m.set_entry(999, 999, 1.0), std::out_of_range);
 
-    REQUIRE(m.get_entry(0, 0) == 1);
-    REQUIRE(m.get_entry(1, 0) == 2);
-    REQUIRE(m.get_entry(0, 1) == 3);
-    REQUIRE(m.get_entry(1, 1) == 4);
-    REQUIRE(m.get_entry(0, 2) == 5);
-    REQUIRE(m.get_entry(1, 2) == 6);
-
-    REQUIRE_THROWS_AS(m.get_entry(999, 999), std::out_of_range);
+            REQUIRE_THROWS_AS(m.get_entry(999, 999), std::out_of_range);
+        }
+    }
 }
 
-SCENARIO("Matricies are correctly multiplied with vectors",
+SCENARIO("Matrix is correctly multiplied with vector",
          "[matrix][vector]") {
     GIVEN("a matrix and vector with some values") {
         jml::Matrix m(2, 3);
