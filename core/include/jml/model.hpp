@@ -76,3 +76,5 @@ private:
 };
 
 }
+
+#include "model.tpp"

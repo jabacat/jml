@@ -2,6 +2,8 @@
 
 namespace jml {
 
+Model::Model() {}
+
 std::unique_ptr<Vector> Model::apply(Vector& in) {
 
     std::unique_ptr<Vector> inp  = std::make_unique<Vector>(in);
@@ -16,12 +18,6 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
 
     return inp;
 
-}
-
-template<typename Iter>
-void Model::add_testing_data (Iter inb, Iter ine, Iter otb, Iter ote) {
-    testing_data_inputs .insert(std::end(testing_data_inputs),  inb, ine);
-    testing_data_outputs.insert(std::end(testing_data_outputs), otb, ote);
 }
 
 void Model::add_testing_data(std::vector<Vector> ins, std::vector<Vector> outs) {
