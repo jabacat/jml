@@ -18,10 +18,8 @@ std::unique_ptr<Vector> Model::apply(Vector& in) {
 
 }
 
-void Model::add_testing_data (
-    std::vector<Vector>::iterator inb, std::vector<Vector>::iterator ine,
-    std::vector<Vector>::iterator otb, std::vector<Vector>::iterator ote
-) {
+template<typename Iter>
+void Model::add_testing_data (Iter inb, Iter ine, Iter otb, Iter ote) {
     testing_data_inputs .insert(std::end(testing_data_inputs),  inb, ine);
     testing_data_outputs.insert(std::end(testing_data_outputs), otb, ote);
 }
