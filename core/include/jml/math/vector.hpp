@@ -23,6 +23,7 @@ class JML_API Vector {
 public:
 
      Vector(int length);
+     Vector(const Vector& other);
     ~Vector();
 
     // This applies a given function to every component in the vector.

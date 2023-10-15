@@ -16,6 +16,12 @@ Vector::Vector(int length) {
     this->length = length;
 }
 
+Vector::Vector(const Vector& other) {
+    this->length = other.length;
+    this->entries = new double[this->length];
+    memcpy(this->entries, other.entries, this->length * sizeof(double));
+}
+
 Vector::~Vector() { delete[] this->entries; }
 
 void Vector::apply(ActivationFunction *fn) {
