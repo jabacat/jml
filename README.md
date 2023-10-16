@@ -29,3 +29,14 @@ meson test -C build     # replace `build`
 ```
 
 Unfortunately, meson doesn't provide good output when a test fails. Running the test executable manually is often more helpful. Look under `build/tests/` to find the right executable. The executable for testing the core library is `core_tests`.
+
+## Format
+
+We use [clang-format](https://www.kernel.org/doc/html/latest/process/clang-format.html) to check our formatting.
+Before you push your code, you can run the following that finds all source code files, and then formats them all in place.
+
+```
+find . -iname "*.hpp" -o -iname "*.cpp" -o -iname "*.c" -o -iname "*.h" | xargs -I {} clang-format -i -style='{IndentWidth: 4}' {}
+```
+
+You can also add this to your editors formatting system or some precommit step.
