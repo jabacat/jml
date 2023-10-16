@@ -16,4 +16,4 @@ jobs:
     - name: format
       run: |
         cd core
-        find . -iname "*.hpp" -o -iname "*.cpp" -o -iname "*.c" -o -iname "*.h" | xargs -I {} clang-format -i -style='{IndentWidth: 4}' {}
+        find . -iname "*.hpp" -o -iname "*.cpp" -o -iname "*.c" -o -iname "*.h" | xargs -I {} clang-format -i --dry-run --Werror -style='{IndentWidth: 4}' {}
