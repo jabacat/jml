@@ -45,7 +45,7 @@ double Matrix::get_entry(const int i, const int j) const {
     return this->entries[get_position(i, j)];
 }
 
-std::unique_ptr<Vector> Matrix::multiply(const Vector &in) const {
+std::unique_ptr<Vector> Matrix::multiply(const Vector& in) const {
 
     if (in.get_size() != this->n) {
         LOGGER->log(Log(WARN) << "Tried to multiply a vector of size "

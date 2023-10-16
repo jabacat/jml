@@ -36,7 +36,7 @@ We use [clang-format](https://www.kernel.org/doc/html/latest/process/clang-forma
 Before you push your code, you can run the following that finds all source code files, and then formats them all in place.
 
 ```
-find . -iname "*.hpp" -o -iname "*.cpp" -o -iname "*.c" -o -iname "*.h" | xargs -I {} clang-format -i -style='{IndentWidth: 4}' {}
+find . -iname "*.hpp" -o -iname "*.cpp" -o -iname "*.c" -o -iname "*.h" | xargs -I {} clang-format -i -style='{IndentWidth: 4, ReferenceAlignment: Left}' {}
 ```
 
 You can also add this to your editors formatting system or some precommit step.

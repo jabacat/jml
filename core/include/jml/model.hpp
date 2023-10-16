@@ -60,7 +60,7 @@ class JML_API Model {
 
   public:
     Model();
-    std::unique_ptr<Vector> apply(Vector &in);
+    std::unique_ptr<Vector> apply(Vector& in);
     // Adds testing data using iterators, for the start and end locations of
     // the wanted input and output data lists.
     template <typename Iter>

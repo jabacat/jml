@@ -25,9 +25,9 @@ class JML_LOCAL Log {
     std::string message;
 
   public:
-    Log &operator<<(enum Severity s);
-    Log &operator<<(std::string m);
-    Log &operator<<(int m);
+    Log& operator<<(enum Severity s);
+    Log& operator<<(std::string m);
+    Log& operator<<(int m);
 
     enum Severity get_severity();
     std::string get_message();

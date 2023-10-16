@@ -22,14 +22,14 @@ class JML_API Vector {
 
   public:
     Vector(int length);
-    Vector(const Vector &other);
+    Vector(const Vector& other);
     ~Vector();
 
     // This applies a given function to every component in the vector.
     void apply(ActivationFunction *fn);
 
     // This adds every entry in v to this vector.
-    void add(Vector &v);
+    void add(Vector& v);
 
     int get_size() const;
 

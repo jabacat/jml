@@ -16,7 +16,7 @@ Vector::Vector(int length) {
     this->length = length;
 }
 
-Vector::Vector(const Vector &other) {
+Vector::Vector(const Vector& other) {
     this->length = other.length;
     this->entries = new double[this->length];
     memcpy(this->entries, other.entries, this->length * sizeof(double));
@@ -30,7 +30,7 @@ void Vector::apply(ActivationFunction *fn) {
     }
 }
 
-void Vector::add(Vector &v) {
+void Vector::add(Vector& v) {
     if (this->length != v.length) {
         LOGGER->log(Log(WARN)
                     << "Tried to add a vector of length " << v.length

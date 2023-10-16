@@ -5,7 +5,7 @@ namespace jml {
 
 Model::Model() {}
 
-std::unique_ptr<Vector> Model::apply(Vector &in) {
+std::unique_ptr<Vector> Model::apply(Vector& in) {
 
     std::unique_ptr<Vector> inp = std::make_unique<Vector>(in);
     std::unique_ptr<Vector> outp;

@@ -12,17 +12,17 @@ enum Severity Log::get_severity() { return this->severity; }
 
 std::string Log::get_message() { return this->message; }
 
-Log &Log::operator<<(enum Severity s) {
+Log& Log::operator<<(enum Severity s) {
     this->severity = s;
     return *this;
 }
 
-Log &Log::operator<<(std::string m) {
+Log& Log::operator<<(std::string m) {
     this->message += m;
     return *this;
 }
 
-Log &Log::operator<<(int m) {
+Log& Log::operator<<(int m) {
     this->message += std::to_string(m);
     return *this;
 }

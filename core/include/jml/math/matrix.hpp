@@ -34,7 +34,7 @@ class JML_API Matrix {
     int get_n_cols() const;
     void set_entry(int i, int j, double value);
     double get_entry(const int i, const int j) const;
-    std::unique_ptr<Vector> multiply(const Vector &in) const;
+    std::unique_ptr<Vector> multiply(const Vector& in) const;
 };
 
 } // namespace jml
