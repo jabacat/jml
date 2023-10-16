@@ -1,5 +1,5 @@
-#include <jml/internal/logger.hpp>
 #include <iostream>
+#include <jml/internal/logger.hpp>
 #include <string>
 
 namespace jml {

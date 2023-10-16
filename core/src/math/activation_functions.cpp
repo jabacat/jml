@@ -5,13 +5,9 @@
 
 namespace jml {
 
-double ActivationFunction::f_precomp() {
-    return 0.0;
-}
+double ActivationFunction::f_precomp() { return 0.0; }
 
-double ActivationFunction::df_precomp() {
-    return 0.0;
-}
+double ActivationFunction::df_precomp() { return 0.0; }
 
 // FastSigmoid
 //

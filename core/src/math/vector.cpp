@@ -1,5 +1,5 @@
-#include <jml/math/vector.hpp>
 #include <jml/internal/logger.hpp>
+#include <jml/math/vector.hpp>
 
 #include <cstring>
 #include <iostream>
@@ -16,7 +16,7 @@ Vector::Vector(int length) {
     this->length = length;
 }
 
-Vector::Vector(const Vector& other) {
+Vector::Vector(const Vector &other) {
     this->length = other.length;
     this->entries = new double[this->length];
     memcpy(this->entries, other.entries, this->length * sizeof(double));
