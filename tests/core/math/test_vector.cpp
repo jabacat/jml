@@ -64,7 +64,7 @@ SCENARIO("Vector is added to another vector") {
 SCENARIO("Activation function is applied to a vector") {
     GIVEN("a vector and an activation function") {
         jml::Vector v(3);
-        jml::ReLU act;  // Use ReLU for simplicity
+        jml::ReLU act; // Use ReLU for simplicity
 
         v.set_entry(0, -10);
         v.set_entry(1, 0);
