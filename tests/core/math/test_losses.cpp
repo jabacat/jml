@@ -10,7 +10,7 @@ SCENARIO("Loss can be calculated from two vectors") {
         vec1.set_entry(2, 3.0);
         vec2.set_entry(0, 4.0);
         vec2.set_entry(1, 2.0);
-        vec2.set_entry(2,-2.0);
+        vec2.set_entry(2,-1.0);
         auto loss = jml::l2lf(vec1, vec2);
         REQUIRE(loss == 5.0);
     }
