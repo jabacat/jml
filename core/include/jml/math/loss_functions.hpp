@@ -40,7 +40,7 @@ public:
 };
 
 // Also, we provide an example set of loss functions (L^2 norm)
-extern LF l2lf;
-extern DL l2dl;
+extern JML_API LF l2lf;
+extern JML_API DL l2dl;
 
 }
