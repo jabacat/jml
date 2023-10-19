@@ -10,7 +10,9 @@ endif
 
 # TODO: pkg-config stuff
 
-core_sources = ['src/math/matrix.cpp', 'src/math/vector.cpp', 'src/math/activation_functions.cpp', 'src/model.cpp', 'src/logger.cpp', 'capi/cjml.cpp']
+core_sources = ['src/math/matrix.cpp', 'src/math/vector.cpp',
+'src/math/activation_functions.cpp', 'src/model.cpp', 'src/logger.cpp',
+'capi/cjml.cpp', 'src/math/loss_functions.cpp']
 jmlcore = library('jmlcore',
                   core_sources,
                   include_directories: core_inc,
