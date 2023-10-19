@@ -23,7 +23,7 @@ double LossFunction::get_loss_derivative(
 	return this->dl(actual, expected, index);
 }
 
-LF l2lf = [](const Vector& actual, const Vector& expected) {
+JML_API LF l2lf = [](const Vector& actual, const Vector& expected) {
 	int a = actual.get_size(), e = expected.get_size();
 	if (a != e) {
 		LOGGER->log(Log(WARN)
@@ -40,7 +40,7 @@ LF l2lf = [](const Vector& actual, const Vector& expected) {
 	return sqrt(total);
 };
 
-DL l2dl = [](const Vector& actual, const Vector& expected, int i) {
+JML_API DL l2dl = [](const Vector& actual, const Vector& expected, int i) {
 	double l = l2lf(actual, expected);
 	double ret = 1.0 / (2 * l);
 	ret *= 2 * (actual.get_entry(i) - expected.get_entry(i));

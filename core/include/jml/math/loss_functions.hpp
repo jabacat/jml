@@ -20,8 +20,8 @@
 
 namespace jml {
 
-typedef JML_API std::function<double(const jml::Vector&, const jml::Vector&)> LF;
-typedef JML_API std::function<double(const jml::Vector&, const jml::Vector&, int i)> DL;
+typedef std::function<double(const jml::Vector&, const jml::Vector&)> LF;
+typedef std::function<double(const jml::Vector&, const jml::Vector&, int i)> DL;
 
 class JML_API LossFunction {
 
