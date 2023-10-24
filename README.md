@@ -1,4 +1,5 @@
-# jml
+![JML](./resources/jml-logo-long.png#gh-light-mode-only)
+![JML](./resources/jml-logo-long-dark-mode.png#gh-dark-mode-only)
 JABACAT-created machine learning library from scratch.
 
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jabacat/jml/build-test.yml?style=for-the-badge)
