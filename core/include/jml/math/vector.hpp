@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <jml/math/activation_functions.hpp>
-#include <jml/jmldefs.h>
 #include <jml/internal/logger.hpp>
+#include <jml/jmldefs.h>
+#include <jml/math/activation_functions.hpp>
 
 namespace jml {
 
@@ -18,16 +18,15 @@ class JML_API Vector {
 
     int length; // The number of entries in the vector
 
-    double * entries;
+    double *entries;
 
-public:
-
-     Vector(int length);
-     Vector(const Vector& other);
+  public:
+    Vector(int length);
+    Vector(const Vector& other);
     ~Vector();
 
     // This applies a given function to every component in the vector.
-    void apply(ActivationFunction * fn);
+    void apply(ActivationFunction *fn);
 
     // This adds every entry in v to this vector.
     void add(Vector& v);
@@ -36,8 +35,8 @@ public:
 
     double get_entry(int pos) const;
     void set_entry(int pos, double val);
-    void add_entry(int pos, double val); // Adds val to the current value in pos.
-
+    void add_entry(int pos,
+                   double val); // Adds val to the current value in pos.
 };
 
-}
+} // namespace jml

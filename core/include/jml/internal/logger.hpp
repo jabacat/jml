@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include <jml/jmldefs.h>
 #include <iostream>
+#include <jml/jmldefs.h>
 
 namespace jml {
 
@@ -25,9 +25,9 @@ class JML_LOCAL Log {
     std::string message;
 
   public:
-    Log &operator<<(enum Severity s);
-    Log &operator<<(std::string m);
-    Log &operator<<(int m);
+    Log& operator<<(enum Severity s);
+    Log& operator<<(std::string m);
+    Log& operator<<(int m);
 
     enum Severity get_severity();
     std::string get_message();

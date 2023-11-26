@@ -1,0 +1,19 @@
+name: format
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: format
+      run: |
+        cd core
+        find . -iname "*.hpp" -o -iname "*.cpp" -o -iname "*.c" -o -iname "*.h" | xargs -I {} clang-format -i --dry-run --Werror -style='{IndentWidth: 4, ReferenceAlignment: Left}' {}

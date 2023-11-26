@@ -16,7 +16,7 @@ jml::Vector& vector_lookup_(unsigned vid) {
 }
 
 int jml_vector_add(unsigned v1, unsigned v2) {
-    jml::Vector& to   = vector_lookup_(v1);
+    jml::Vector& to = vector_lookup_(v1);
     jml::Vector& from = vector_lookup_(v2);
     to.add(from);
     return 0;
@@ -30,14 +30,14 @@ int jml_vector_add_entry(unsigned vid, int pos, double val) {
 
 int jml_vector_apply(unsigned vid, JMLActivFunc val) {
     jml::Vector& v = vector_lookup_(vid);
-    jml::ActivationFunction * a;
+    jml::ActivationFunction *a;
     switch (val) {
-        case JACT_FSIG:
-            a = new jml::FastSigmoid();
-        case JACT_SIG:
-            a = new jml::Sigmoid();
-        case JACT_RELU:
-            a = new jml::ReLU();
+    case JACT_FSIG:
+        a = new jml::FastSigmoid();
+    case JACT_SIG:
+        a = new jml::Sigmoid();
+    case JACT_RELU:
+        a = new jml::ReLU();
     }
     v.apply(a);
     delete a;

@@ -1,12 +1,12 @@
-#include <jml/math/matrix.hpp>
 #include <jml/internal/logger.hpp>
+#include <jml/math/matrix.hpp>
 
 #include <iostream>
 #include <stdexcept>
 
 namespace jml {
 
-Matrix::Matrix(int m, int n): m(m), n(n) { this->entries = new double[m * n]; }
+Matrix::Matrix(int m, int n) : m(m), n(n) { this->entries = new double[m * n]; }
 
 Matrix::~Matrix() { delete[] this->entries; }
 
@@ -57,8 +57,8 @@ std::unique_ptr<Vector> Matrix::multiply(const Vector& in) const {
 
     for (int i = 0; i < this->m; ++i) {
         for (int j = 0; j < this->n; ++j)
-            ret->add_entry(i, in.get_entry(j) *
-                                  this->entries[get_position(i, j)]);
+            ret->add_entry(i,
+                           in.get_entry(j) * this->entries[get_position(i, j)]);
     }
 
     return ret;

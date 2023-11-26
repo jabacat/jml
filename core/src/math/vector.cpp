@@ -1,5 +1,5 @@
-#include <jml/math/vector.hpp>
 #include <jml/internal/logger.hpp>
+#include <jml/math/vector.hpp>
 
 #include <cstring>
 #include <iostream>
@@ -30,7 +30,7 @@ void Vector::apply(ActivationFunction *fn) {
     }
 }
 
-void Vector::add(Vector &v) {
+void Vector::add(Vector& v) {
     if (this->length != v.length) {
         LOGGER->log(Log(WARN)
                     << "Tried to add a vector of length " << v.length

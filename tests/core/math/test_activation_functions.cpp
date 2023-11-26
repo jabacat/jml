@@ -6,7 +6,8 @@
 TEST_CASE("FastSigmoid function", "[activation_function]") {
     jml::FastSigmoid act;
 
-    // FIXME: I don't know what mathematically significant values to check so here's some random ones
+    // FIXME: I don't know what mathematically significant values to check so
+    // here's some random ones
     // FIXME: FastSigmoid impl appears to have forgotten the constant offset
     REQUIRE_THAT(act.f(-1), Catch::Matchers::WithinRel(-0.25, 0.00001));
     REQUIRE_THAT(act.f(0), Catch::Matchers::WithinRel(0, 0.00001));
@@ -49,7 +50,8 @@ TEST_CASE("LeakyReLU activation function", "[activation_function]") {
     REQUIRE(act.df(1) == 1);
 }
 
-TEST_CASE("LeakyReLU activation function with custom leak", "[activation_function]") {
+TEST_CASE("LeakyReLU activation function with custom leak",
+          "[activation_function]") {
     jml::LeakyReLU act(0.0001);
 
     // TODO: is it necessary to check function values?

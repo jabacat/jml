@@ -25,7 +25,7 @@ SCENARIO("Matrix entries can be set and get", "[matrix]") {
                 m.set_entry(0, 2, 5);
                 m.set_entry(1, 2, 6);
             }());
-            
+
             THEN("the stored values are correct") {
                 REQUIRE(m.get_entry(0, 0) == 1);
                 REQUIRE(m.get_entry(1, 0) == 2);
@@ -44,8 +44,7 @@ SCENARIO("Matrix entries can be set and get", "[matrix]") {
     }
 }
 
-SCENARIO("Matrix is correctly multiplied with vector",
-         "[matrix][vector]") {
+SCENARIO("Matrix is correctly multiplied with vector", "[matrix][vector]") {
     GIVEN("a matrix and vector with some values") {
         jml::Matrix m(2, 3);
         jml::Vector V(3);

@@ -9,9 +9,9 @@
 
 #include <memory>
 
-#include <jml/math/vector.hpp>
-#include <jml/jmldefs.h>
 #include <jml/internal/logger.hpp>
+#include <jml/jmldefs.h>
+#include <jml/math/vector.hpp>
 
 namespace jml {
 
